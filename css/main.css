@@ -1,0 +1,117 @@
+.todo-section{
+    height: 100vh;
+    width: 100%;
+    background: url("/images/black-gold.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+
+
+.container{
+    width: 80%;
+    min-height: 200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.box{
+    padding: 10px;
+    margin: 10px;
+    background-color:white;
+    opacity: 0.5;
+    transform: skewY(1deg);
+
+}
+.box-title{
+    background-color: black;
+    opacity: 0.9;
+    padding: 5px;
+    transform: skewY(1deg);
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-name{
+    font-weight: 500;
+    color: white;
+    text-align: left;
+    text-transform: capitalize;
+    /* text-shadow: 5px 5px 20px black; */
+    
+}
+
+.icon{
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.icon.add{
+    color: rgb(121, 223, 121);
+}
+
+.icon.delete{
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-end;
+    color: rgb(248, 8, 48);
+}
+
+
+
+/* .icon:hover{
+    color: rgb(231, 200, 116);
+} */
+
+.todo-form{
+    background-color: #fcc3c9;
+    margin: auto;
+    padding: 20px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.button{
+    font-size: 1.2em;
+    background-color: rgb(121, 223, 121);
+    border: 1px solid rgb(12, 236, 12);
+    border-radius: 5px;
+}
+
+/* .note {
+    position: relative;
+    width: 30%;
+    padding: 1em 1.5em;
+    margin: 2em auto;
+    color: #fff;
+    background: #97C02F;
+  }
+
+  .note:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 16px 16px 0;
+    border-style: solid;
+    border-color: #fff #fff #658E15 #658E15;
+    background: #658E15;
+    display: block; width: 0;
+  } */
+
+
+
+
+
