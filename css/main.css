@@ -20,16 +20,16 @@
 .box{
     padding: 10px;
     margin: 10px;
-    background-color:white;
-    opacity: 0.5;
-    transform: skewY(1deg);
+    background-color:rgb(255,255,255, 0.5);
+    /* opacity: 0.5; */
+    /* transform: skewY(1deg); */
 
 }
 .box-title{
     background-color: black;
-    opacity: 0.9;
+    opacity: 1;
     padding: 5px;
-    transform: skewY(1deg);
+    /* transform: skewY(1deg); */
     display: flex;
     justify-content: space-between;
 }
@@ -42,6 +42,30 @@
     /* text-shadow: 5px 5px 20px black; */
     
 }
+
+.card {
+    position: relative;
+    width: 90%;
+    opacity: 1;
+    padding: 0.5em;
+    margin: 0.5em auto;
+    color: black;
+    background: #aef103;
+    cursor: pointer;
+    display: none;
+  }
+
+  /* .card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 16px 16px 0;
+    border-style: solid;
+    border-color:rgb(255,255,255, 0.5) rgb(255,255,255, 0.5) #658E15 #658E15;
+    background:rgb(255,255,255, 0.1);
+    display: block; width: 0;
+  } */
 
 .icon{
     font-size: 2em;
@@ -89,26 +113,7 @@
     border-radius: 5px;
 }
 
-/* .note {
-    position: relative;
-    width: 30%;
-    padding: 1em 1.5em;
-    margin: 2em auto;
-    color: #fff;
-    background: #97C02F;
-  }
 
-  .note:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-width: 0 16px 16px 0;
-    border-style: solid;
-    border-color: #fff #fff #658E15 #658E15;
-    background: #658E15;
-    display: block; width: 0;
-  } */
 
 
 
