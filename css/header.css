@@ -1,0 +1,46 @@
+
+* {
+    font-family: 'Yusei Magic', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: fixed;
+    height: auto;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    
+    h1 {
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    
+    .hero {
+     background-image: url("../img/images/blackbord.jpg");
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+    
+    .hero img {
+      padding: 2em;
+      width:15%;
+      border-radius: 50%;
+    }
+    
+    .hero h1 {
+      width: 100%;
+      font-size: 4em;
+      color: gold;
+      background-image: linear-gradient(to left, black, gold, black ,gold , black );
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    
+    }
+    
+    
