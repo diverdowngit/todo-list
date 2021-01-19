@@ -1,4 +1,4 @@
-.todo-section{
+.todo-boxs{
     height: 100vh;
     width: 100%;
     background: url("/images/black-gold.jpg");
@@ -7,12 +7,11 @@
     display: block;
 }
 
-
-
 .container{
     width: 80%;
-    min-height: 200px;
+    min-height: 300px;
     margin: 0 auto;
+    padding-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
@@ -72,18 +71,18 @@
     margin: auto;
     padding: 20px;
     position: absolute;
-    top: 40%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    display: none;
 }
 
 
-.button{
+.add-button{
     font-size: 1.2em;
     background-color: rgb(121, 223, 121);
     border: 1px solid rgb(12, 236, 12);
