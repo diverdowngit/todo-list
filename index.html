@@ -6,8 +6,6 @@
 
     <!-- fontawesome reference -->
     <script src="https://kit.fontawesome.com/cd744a9aa5.js" crossorigin="anonymous"></script>
-    <!-- javascript reference -->
-    <script defer src="/js/app.js" type="text/javascript"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Yusei+Magic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -21,46 +19,51 @@
           
           </div>
       </header>
+      
     <!-- Main Section -->
-    <section class="todo-section">
-        <div class="container">
-            <div class="box">
-                <div class="box-title">
-                    <h2 class="box-name">todo</h2>
-                    <i class="fas fa-plus-square icon add" onclick="#"></i>
+    <div class="todo-container">
+         <!-- todo boxs -->
+        <section class="todo-boxs">
+            <div class="container">
+                <div class="box">
+                    <div class="box-title">
+                        <h2 class="box-name">todo</h2>
+                        <i class="fas fa-plus-square icon add" onclick="console.log('add click')"></i>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-title">
+                        <h2 class="box-name">progress</h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-title">
+                        <h2 class="box-name">review</h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-title">
+                        <h2 class="box-name">done</h2>
+                    </div>
                 </div>
             </div>
-            <div class="box">
-                <div class="box-title">
-                    <h2 class="box-name">progress</h2>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-title">
-                    <h2 class="box-name">review</h2>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-title">
-                    <h2 class="box-name">done</h2>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    
+        <!-- Form Section -->
+        <section class="todo-form">
+            <!-- <i class="fas fa-trash-alt icon delete" onclick="console.log('delete click')"></i> -->
+            <form action="">
+                <textarea id="title" rows="2" cols="50" placeholder="Add title"></textarea>
+                <br><br>
+                <label>Description :</label>
+                <br><br>
+                <textarea id="title" rows="5" cols="50" placeholder="Add Description"></textarea>
+                <br><br>
+                  <input type="submit" class="add-button" value="Add Card">
+                </form>
+        </section>
+    </div>
 
-    <!-- Form Section -->
-    <section class="todo-form">
-        <i class="fas fa-trash-alt icon delete" onclick="#"></i>
-        <form action="">
-            <textarea id="title" rows="2" cols="50" placeholder="Add title"></textarea>
-            <br><br>
-            <label>Description :</label>
-            <br><br>
-            <textarea id="title" rows="5" cols="50" placeholder="Add Description"></textarea>
-            <br><br>
-              <input type="submit" class="button" value="Add Card">
-            </form>
-    </section>
   
          
 <footer class="foot">
