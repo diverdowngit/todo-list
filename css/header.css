@@ -3,8 +3,7 @@
     font-family: 'Yusei Magic', sans-serif;
     margin: 0;
     padding: 0;
-    width: fixed;
-    height: auto;
+   
     }
     
     body {
@@ -23,6 +22,8 @@
      display: flex;
      justify-content: center;
      align-items: center;
+     width: fixed;
+     height: auto;
     }
     
     .hero img {
