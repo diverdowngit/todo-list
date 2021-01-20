@@ -33,14 +33,12 @@
     
     .hero h1 {
       width: 100%;
-      font-size: 4em;
-      color: gold;
+      font-size: 5em;
       background-image: linear-gradient(to left, black, gold, black ,gold , black );
       -webkit-background-clip: text;
       -moz-background-clip: text;
       background-clip: text;
       color: transparent;
-    
     }
     
     
