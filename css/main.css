@@ -21,13 +21,11 @@
     padding: 10px;
     margin: 10px;
     background-color:rgb(255,255,255, 0.5);
-    /* opacity: 0.5; */
     /* transform: skewY(1deg); */
 
 }
 .box-title{
     background-color: black;
-    opacity: 1;
     padding: 5px;
     /* transform: skewY(1deg); */
     display: flex;
@@ -46,13 +44,17 @@
 .card {
     position: relative;
     width: 90%;
-    opacity: 1;
     padding: 0.5em;
     margin: 0.5em auto;
     color: black;
     background: #aef103;
     cursor: pointer;
     display: none;
+  }
+
+
+  textarea{
+      border-radius: 3px;
   }
 
   /* .card:before {
@@ -103,6 +105,7 @@
     justify-content: center;
     align-items: center;
     display: none;
+    border-radius: 3px;
 }
 
 
@@ -114,6 +117,13 @@
 }
 
 
+.displayItem{
+    display: block !important;
+  }
+
+.hideItem{
+display: none;
+}
 
 
 
