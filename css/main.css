@@ -1,7 +1,7 @@
 .todo-boxs{
     height: 100vh;
     width: 100%;
-    background: url("/images/black-gold.jpg");
+    background: url("/img/black-gold.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     display: block;
@@ -42,18 +42,35 @@
 }
 
 .card {
-    position: relative;
-    width: 90%;
+    display: flex;
+    flex-direction: column;
     padding: 0.5em;
+    width: 100%;
     margin: 0.5em auto;
     color: black;
-    background: #aef103;
+    background: #cbf85a;
     cursor: pointer;
-    display: none;
+    max-width: 250px;
+    max-height: 250px;
+    overflow:auto;
+    /* display: none; */
+  }
+
+  .card:nth-child(2n+1){
+    background: #f08ac5;
+  }
+
+  .card:nth-child(3n+1){
+    background: #fdfb68;
+  }
+
+  .card:nth-child(4n+1){
+    background: #88dbf5;
   }
 
 
   textarea{
+      padding: 0.3em;
       border-radius: 3px;
   }
 
@@ -86,6 +103,14 @@
     color: rgb(248, 8, 48);
 }
 
+.icon.close{
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-end;
+    color: rgb(248, 8, 48);
+}
+
 
 
 /* .icon:hover{
@@ -93,7 +118,7 @@
 } */
 
 .todo-form{
-    background-color: #fcc3c9;
+    background-color:#ff78ff;
     margin: auto;
     padding: 20px;
     position: absolute;
@@ -109,11 +134,12 @@
 }
 
 
-.add-button{
+.add-card-button{
     font-size: 1.2em;
     background-color: rgb(121, 223, 121);
     border: 1px solid rgb(12, 236, 12);
     border-radius: 5px;
+    cursor: pointer;
 }
 
 
