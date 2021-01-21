@@ -21,53 +21,54 @@
           </div>
       </header>
       
-    <!-- Main Section -->
-    <div class="todo-container">
-         <!-- todo boxs -->
-        <section class="todo-boxs">
-            <div class="container">
-                <div class="box">
-                    <div class="box-title">
-                        <h2 class="box-name">todo</h2>
-                        <i class="fas fa-plus-square icon add"></i>
-                    </div>
-                    <div class="cards">
-                        <div class="card">finsih todo project</div>
-                    </div>
-                        
-                </div>
-                <div class="box">
-                    <div class="box-title">
-                        <h2 class="box-name">progress</h2>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="box-title">
-                        <h2 class="box-name">review</h2>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="box-title">
-                        <h2 class="box-name">done</h2>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-        <!-- Form Section -->
-        <section class="todo-form displayItem">
-            <!-- <i class="fas fa-trash-alt icon delete" onclick="console.log('delete click')"></i> -->
-            <form action="">
-                <textarea id="title" rows="2" cols="50" placeholder="Add title"></textarea>
-                <br><br>
-                <label>Description :</label>
-                <br><br>
-                <textarea id="title" rows="5" cols="50" placeholder="Add Description"></textarea>
-                <br><br>
-                  <input type="submit" class="add-button" value="Add Card">
-                </form>
-        </section>
-    </div>
+        <!-- Main Section -->
+        <div class="todo-container">
+            <!-- todo boxs -->
+           <section class="todo-boxs">
+               <div class="container">
+                   <div class="box">
+                       <div class="box-title">
+                           <h2 class="box-name">todo</h2>
+                           <i class="fas fa-plus-square icon add"></i>
+                       </div>
+                       <div class="cards">
+                       </div>
+                           
+                   </div>
+                   <div class="box">
+                       <div class="box-title">
+                           <h2 class="box-name">progress</h2>
+                       </div>
+                   </div>
+                   <div class="box">
+                       <div class="box-title">
+                           <h2 class="box-name">review</h2>
+                       </div>
+                   </div>
+                   <div class="box">
+                       <div class="box-title">
+                           <h2 class="box-name">done</h2>
+                       </div>
+                   </div>
+               </div>
+           </section>
+       
+           <!-- Form Section -->
+           <section class="todo-form">
+               <!-- <i class="fas fa-trash-alt icon delete"></i> -->
+               <i class="fas fa-window-close icon close"></i>
+               <form action="">
+                   <textarea class="todo-title" rows="2" cols="50" placeholder="Add title"></textarea>
+                   <p class="error" style="color: red; visibility: hidden;">please add title</p>
+                   <br>
+                   <label>Description :</label>
+                   <br><br>
+                   <textarea class="todo-description" rows="5" cols="50" placeholder="Add Description"></textarea>
+                   <br><br>
+                     <input type="submit" class="add-card-button" value="Add Card">
+                   </form>
+           </section>
+       </div>
 
   
          
