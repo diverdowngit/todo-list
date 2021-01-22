@@ -18,9 +18,11 @@
 }
 
 .box{
+    max-width: 250px;
     padding: 10px;
     margin: 10px;
     background-color:rgb(255,255,255, 0.5);
+    color: white;
     /* transform: skewY(1deg); */
 
 }
@@ -34,122 +36,113 @@
 
 .box-name{
     font-weight: 500;
-    color: white;
     text-align: left;
     text-transform: capitalize;
-    /* text-shadow: 5px 5px 20px black; */
-    
+    /* text-shadow: 5px 5px 20px black; */   
 }
 
-.card {
+.cards{
+    max-height: 420px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.card{  
     display: flex;
-    flex-direction: column;
-    padding: 0.5em;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background:  rgba(37, 36, 34, 0.9);
+    color: white;
+    margin: 10px auto 0 auto;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+.card-text {
     width: 100%;
-    margin: 0.5em auto;
-    color: black;
-    background: #cbf85a;
     cursor: pointer;
-    max-width: 250px;
-    max-height: 250px;
-    overflow:auto;
-    /* display: none; */
+    max-height: 400px;
+    white-space: nowrap; 
+    /* text-overflow : ellipsis; */
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
-  .card:nth-child(2n+1){
-    background: #f08ac5;
+  .card-icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
   }
 
-  .card:nth-child(3n+1){
-    background: #fdfb68;
-  }
-
-  .card:nth-child(4n+1){
-    background: #88dbf5;
-  }
-
+ 
 
   textarea{
       padding: 0.3em;
       border-radius: 3px;
   }
 
-  /* .card:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-width: 0 16px 16px 0;
-    border-style: solid;
-    border-color:rgb(255,255,255, 0.5) rgb(255,255,255, 0.5) #658E15 #658E15;
-    background:rgb(255,255,255, 0.1);
-    display: block; width: 0;
-  } */
 
 .icon{
-    font-size: 2em;
     cursor: pointer;
 }
 
-.icon.add{
+.add{
+    font-size: 2em;
     color: rgb(121, 223, 121);
 }
+.edit{
+    font-size: 1em;
+    color: rgb(121, 223, 121);
+    padding-right: 3px;
+}
 
-.icon.delete{
+.delete{
+    font-size: 1em;
+    color: rgb(248, 8, 48);
+}
+
+.close{
     width: 100%;
     padding: 10px 0;
     display: flex;
     justify-content: flex-end;
-    color: rgb(248, 8, 48);
-}
-
-.icon.close{
-    width: 100%;
-    padding: 10px 0;
-    display: flex;
-    justify-content: flex-end;
-    color: rgb(248, 8, 48);
+    color: rgb(255, 0, 43);
+    font-size: 2em;
 }
 
 
-
-/* .icon:hover{
-    color: rgb(231, 200, 116);
-} */
 
 .todo-form{
-    background-color:#ff78ff;
+    background-color: rgba(37, 36, 34, 0.9);
     margin: auto;
     padding: 20px;
     position: absolute;
-    top: 80%;
+    color: blanchedalmond;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    display: none;
-    border-radius: 3px;
-}
+    border: 2px solid rgb(110,100,94);
+    border-radius: 6px;
+    opacity: 0;
 
+}
 
 .add-card-button{
     font-size: 1.2em;
     background-color: rgb(121, 223, 121);
     border: 1px solid rgb(12, 236, 12);
     border-radius: 5px;
+    padding: 4px 10px;
     cursor: pointer;
 }
 
-
-.displayItem{
-    display: block !important;
-  }
-
-.hideItem{
-display: none;
+.active{
+    opacity: 1 !important;
 }
+
 
 
 
