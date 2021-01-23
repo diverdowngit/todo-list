@@ -117,7 +117,7 @@
     padding: 20px;
     position: absolute;
     color: blanchedalmond;
-    top: 60%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -126,7 +126,7 @@
     align-items: center;
     border: 2px solid rgb(110,100,94);
     border-radius: 6px;
-    opacity: 0;
+    display: none;
 
 }
 
@@ -140,7 +140,7 @@
 }
 
 .active{
-    opacity: 1 !important;
+    display: block !important;
 }
 
 
