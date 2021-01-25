@@ -54,7 +54,7 @@ function editTodo(id, title, description){
 function renderTodo(todo){
     const cards = document.querySelector(".cards");
 
-    const tamplate = `<div class="card" id="${todo.id}">
+    const tamplate = `<div class="card" id="${todo.id}" draggable="true" ondragstart="DragStart(event)">
                             <p class="card-text">${todo.heading}</p>
 
                             <div class="card-icon">
@@ -119,20 +119,22 @@ function editCard(obj){
     input2.value = editTodo.text;
     
 }
+// drag
 
+function allowDrop(ev) {
+    ev.preventDefault();
+  }
+  
+  function DragStart(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
 
-
-
-
-
-
-
-
-
-
-
-
-
+  }
+  
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+  }
 
 
 
