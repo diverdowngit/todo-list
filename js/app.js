@@ -8,65 +8,62 @@ let editCardID = null;
 const input1 = document.querySelector(".todo-title");
 const input2 = document.querySelector(".todo-description");
 
-const showForm = () =>{
-    addForm.classList.add("active");
-    errorTag.style.visibility = "hidden";
-    if(!editCardID){
-        input1.value = '';
-        input2.value = '';
+class Todo{
+    constructor(){
+        this.todoItems = [];
     }
-    input1.focus();
-};
+    showForm = () =>{
+        addForm.classList.add("active");
+        errorTag.style.visibility = "hidden";
+        if(!editCardID){
+            input1.value = '';
+            input2.value = '';
+        }
+        input1.focus();
+    };
 
-addIcon.addEventListener('click',showForm);
+    hideForm = () =>{
+        addForm.classList.remove("active");
+    };
 
-const hideForm = () =>{
-    addForm.classList.remove("active");
-};
-
-colseIcon.addEventListener('click', hideForm);
-
-// This is the array that will hold the todo list items
-let todoItems = [];
-
-// This function will create a new todo object based on the
-// text that was entered in the text input, and push it into
-// the `todoItems` array
-function addTodo(title, description){
-    const todo = {
-        heading : title, 
-        text : description,
-        id: Date.now(),
+    addTodo(title, description){
+        const todo = {
+            heading : title, 
+            text : description,
+            id: Date.now(),
+        }
+        this.todoItems.push(todo);
+        this.renderTodo(todo);
     }
-    todoItems.push(todo);
-    renderTodo(todo);
+
+    editTodo(id, title, description){
+        const index = this.todoItems.findIndex( item => item.id === id);
+        this.todoItems[index].heading = title;
+        this.todoItems[index].text = description;
+        const card = document.querySelector(`[id='${id}']`);
+        card.children[0].textContent = title;
+    }
+
+    renderTodo(todo){
+        const cards = document.querySelector(".cards");
+    
+        const tamplateHTML = `<div class="card" id="${todo.id}" draggable="true" ondragstart="DragStart(event)" ondragend="DragEnd(event)">
+                                <p class="card-text">${todo.heading}</p>
+    
+                                <div class="card-icon">
+                                    <i class="fas fa-edit icon edit greenH" data-id="${todo.id}" onclick="editCard(this)"></i>
+                                    <i class="far fa-trash-alt icon delete redH" data-id="${todo.id}" onclick="deleteCard(this)"></i>
+                                </div>
+                            </div>`;
+        cards.innerHTML += tamplateHTML;
+    };
+
 }
 
-function editTodo(id, title, description){
-    const index = todoItems.findIndex( item => item.id === id);
-    todoItems[index].heading = title;
-    todoItems[index].text = description;
-    const card = document.querySelector(`[id='${id}']`);
-    card.children[0].textContent = title;
-}
+const myTodo = new Todo();
 
-// our html Tamplate is :::  <div class="card">finsih todo project</div>
-function renderTodo(todo){
-    const cards = document.querySelector(".cards");
-
-    const tamplateHTML = `<div class="card" id="${todo.id}" draggable="true" ondragstart="DragStart(event)" ondragend="DragEnd(event)">
-                            <p class="card-text">${todo.heading}</p>
-
-                            <div class="card-icon">
-                                <i class="fas fa-edit icon edit greenH" data-id="${todo.id}" onclick="editCard(this)"></i>
-                                <i class="far fa-trash-alt icon delete redH" data-id="${todo.id}" onclick="deleteCard(this)"></i>
-                            </div>
-                        </div>`;
-    cards.innerHTML += tamplateHTML;
-};
-
-
-// add a submit event listener
+addIcon.addEventListener('click', myTodo.showForm);
+colseIcon.addEventListener('click', myTodo.hideForm);
 addForm.addEventListener('submit', saveTodo);
 
 
@@ -80,7 +77,7 @@ function saveTodo(event){
         const descriptionText = input2.value.trim();
 
         if(titleText !== ''){
-            editCardID ? editTodo(editCardID, titleText, descriptionText) : addTodo(titleText, descriptionText);
+            editCardID ? myTodo.editTodo(editCardID, titleText, descriptionText) : myTodo.addTodo(titleText, descriptionText);
             input1.value = '';
             input2.value = '';
             input1.focus();
@@ -97,13 +94,9 @@ function saveTodo(event){
 // Delete ToDo::::::
 function deleteCard(obj){
     const id = obj.dataset.id;
-    // const todo = {
-    //     deleted: true,
-    //     ...todoItems[index]
-    // };
 
     // remove the todo item from the array by filtering it out
-    todoItems = todoItems.filter(item => item.id !== Number(id));
+    myTodo.todoItems = myTodo.todoItems.filter(item => item.id !== Number(id));
     const item = document.querySelector(`[id='${id}']`);
     item.remove();
 }
@@ -111,20 +104,18 @@ function deleteCard(obj){
 // EditCard ToDo::::::
 function editCard(obj){
     const id = obj.dataset.id;
-    let index = todoItems.findIndex(item => item.id === Number(id));
-    const editTodo = todoItems[index];
+    let index = myTodo.todoItems.findIndex(item => item.id === Number(id));
+    const editTodo = myTodo.todoItems[index];
     editCardID = editTodo.id;
-    showForm();
+    myTodo.showForm();
     input1.value = editTodo.heading;
     input2.value = editTodo.text;
-    
 }
 
 // Drag and Drop
 let boxs = document.getElementsByClassName('box');
 for(var box of boxs){
     box.addEventListener('dragover',DragOver);
-    box.addEventListener('dragenter',DragEnter);
     box.addEventListener('drop', Drop);
 }
  
@@ -145,7 +136,6 @@ function DragEnd(){
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     if(ev.target.classList.contains('cards')){
-        ev.target.style.border = "none";
     }   ev.target.appendChild(document.getElementById(data));
  }
 
@@ -154,8 +144,3 @@ function DragOver(ev) {
     ev.preventDefault();
     ev.target.closest(".box").style.border= "2px solid gold";
 }
-
-function DragEnter(ev){
-    ev.preventDefault();
-}
-
