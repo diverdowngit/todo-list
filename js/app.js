@@ -54,15 +54,15 @@ function editTodo(id, title, description){
 function renderTodo(todo){
     const cards = document.querySelector(".cards");
 
-    const tamplate = `<div class="card" id="${todo.id}" draggable="true" ondragstart="DragStart(event)">
+    const tamplateHTML = `<div class="card" id="${todo.id}" draggable="true" ondragstart="DragStart(event)" ondragend="DragEnd(event)">
                             <p class="card-text">${todo.heading}</p>
 
                             <div class="card-icon">
-                                <i class="fas fa-edit icon edit" data-id="${todo.id}" onclick="editCard(this)"></i>
-                                <i class="far fa-trash-alt icon delete" data-id="${todo.id}" onclick="deleteCard(this)"></i>
+                                <i class="fas fa-edit icon edit greenH" data-id="${todo.id}" onclick="editCard(this)"></i>
+                                <i class="far fa-trash-alt icon delete redH" data-id="${todo.id}" onclick="deleteCard(this)"></i>
                             </div>
                         </div>`;
-    cards.innerHTML += tamplate;
+    cards.innerHTML += tamplateHTML;
 };
 
 
@@ -119,22 +119,43 @@ function editCard(obj){
     input2.value = editTodo.text;
     
 }
-// drag
 
-function allowDrop(ev) {
-    ev.preventDefault();
-  }
-  
-  function DragStart(ev) {
+// Drag and Drop
+let boxs = document.getElementsByClassName('box');
+for(var box of boxs){
+    box.addEventListener('dragover',DragOver);
+    box.addEventListener('dragenter',DragEnter);
+    box.addEventListener('drop', Drop);
+}
+ 
+let startBox = null;
+// call on DragStart
+function DragStart(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
+    startBox = ev.target.closest(".box");
+}
 
-  }
-  
-  function drop(ev) {
+function DragEnd(){
+    startBox.style.border = "none";
+    startBox = null;
+}
+
+// call on OnDrop
+  function Drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-  }
+    if(ev.target.classList.contains('cards')){
+        ev.target.style.border = "none";
+    }   ev.target.appendChild(document.getElementById(data));
+ }
 
+ // call on Drag Over
+function DragOver(ev) {
+    ev.preventDefault();
+    ev.target.closest(".box").style.border= "2px solid gold";
+}
 
+function DragEnter(ev){
+    ev.preventDefault();
+}
 
