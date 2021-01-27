@@ -144,3 +144,11 @@ function DragOver(ev) {
     ev.preventDefault();
     ev.target.closest(".box").style.border= "2px solid gold";
 }
+
+// call on Drag End 
+function DragEnd(ev){
+    ev.preventDefault();
+    ev.target.closest(".box").style.border= "none";
+    startBox.style.border = "none";
+    startBox = null;
+}
