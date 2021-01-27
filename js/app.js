@@ -94,7 +94,8 @@ function saveTodo(event){
 // Delete ToDo::::::
 function deleteCard(obj){
     const id = obj.dataset.id;
-
+     window.alert("Are you sure you want to do that?");
+    
     // remove the todo item from the array by filtering it out
     myTodo.todoItems = myTodo.todoItems.filter(item => item.id !== Number(id));
     const item = document.querySelector(`[id='${id}']`);
