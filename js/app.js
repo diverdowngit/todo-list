@@ -96,9 +96,12 @@ function deleteCard(obj){
     const id = obj.dataset.id;
 
     // remove the todo item from the array by filtering it out
-    myTodo.todoItems = myTodo.todoItems.filter(item => item.id !== Number(id));
-    const item = document.querySelector(`[id='${id}']`);
-    item.remove();
+    if(confirm("Are you sure you want to delete Card")){
+        myTodo.todoItems = myTodo.todoItems.filter(item => item.id !== Number(id));
+
+        const item = document.querySelector(`[id='${id}']`);
+        item.remove();
+    }
 }
 
 // EditCard ToDo::::::
@@ -111,6 +114,7 @@ function editCard(obj){
     input1.value = editTodo.heading;
     input2.value = editTodo.text;
 }
+
 
 // Drag and Drop
 let boxs = document.getElementsByClassName('box');
@@ -126,17 +130,13 @@ function DragStart(ev) {
     startBox = ev.target.closest(".box");
 }
 
-function DragEnd(){
-    startBox.style.border = "none";
-    startBox = null;
-}
-
 // call on OnDrop
   function Drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     if(ev.target.classList.contains('cards')){
-    }   ev.target.appendChild(document.getElementById(data));
+        ev.target.appendChild(document.getElementById(data));
+    }   
  }
 
  // call on Drag Over
