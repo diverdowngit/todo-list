@@ -1,7 +1,7 @@
 .todo-boxs{
     min-height: 80vh; 
     width: 100%;
-    background: url("img/black-gold.jpg");
+    background: url("./img/black-gold.jpg");
     background-size: cover;
     background-repeat: repeat-y;
     display: block;
