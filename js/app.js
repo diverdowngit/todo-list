@@ -149,7 +149,9 @@ function DragOver(ev) {
 // call on Drag End 
 function DragEnd(ev){
     ev.preventDefault();
-    ev.target.closest(".box").style.border= "none";
-    startBox.style.border = "none";
+    let boxes = document.querySelectorAll('.boxs');
+    for(var box of boxs){
+        box.style.border= "none";
+    }
     startBox = null;
 }
