@@ -14,13 +14,13 @@ h1 {
     
     .hero img {
       padding: 1em;
-      width:10%;
+      width: 150px;
       border-radius: 50%;
     }
     
     .hero h1 {
       width: 100%;
-      font-size: 4em;
+      font-size: 3.5em;
       background-image: linear-gradient(to left, black, gold, rgb(255, 255, 255) ,gold , black );
       -webkit-background-clip: text;
       -moz-background-clip: text;
