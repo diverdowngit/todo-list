@@ -97,7 +97,7 @@ function deleteCard(obj){
      window.alert("Are you sure you want to do that?");
     
     // remove the todo item from the array by filtering it out
-    if(confirm("Are you sure you want to delete Card")){
+    if(confirm("Are you sure you want to do this?")){
         myTodo.todoItems = myTodo.todoItems.filter(item => item.id !== Number(id));
 
         const item = document.querySelector(`[id='${id}']`);
